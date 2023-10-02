@@ -1,0 +1,16 @@
+<form class="user-form">
+  <h2>Gästebuch-Formular</h2>
+  <div class="user-input-wrapper">
+    <input id="name" type="text" placeholder="Name" />
+    <textarea id="bodytext" type="text" placeholder="Nachricht..."></textarea>
+    <input id="file" type="file" />
+  </div>
+  <button id="submit" (click)="addGuestbookEntry()">Eintrag absenden</button>
+  <div class="status-wrapper">
+    <label [innerHTML]="progressString"></label>
+    <mat-progress-bar mode="determinate" [value]="progressValue"></mat-progress-bar>
+  </div>
+  <div class="legal-text">
+    <p></p>
+  </div>
+</form>

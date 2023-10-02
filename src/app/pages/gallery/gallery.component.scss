@@ -1,0 +1,54 @@
+@import '../../../stylings/variables';
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem auto;
+  width: calc(100% - 5rem);
+
+  h2 {
+    margin: 2rem 0;
+    text-decoration: underline;
+  }
+
+  .user-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    button {
+      color: white;
+      height: 2rem;
+      border: 2px solid black;
+      font-size: 1.25em;
+      border-radius: 10px;
+      background-color: $prim-dark-color;
+    }
+
+    .upload-status {
+      display: none;
+      padding: 1rem 0 1rem 0;
+
+      .mat-mdc-progress-bar {
+        background-color: lightgray;
+        --mdc-linear-progress-active-indicator-color: $prim-dark-color !important;
+      }
+    }
+  }
+
+  .gallery-wrapper {
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: .5rem;
+    align-items: center;
+    div {
+      width: calc(50% - 4px);
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+  }
+}

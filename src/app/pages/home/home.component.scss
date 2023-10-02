@@ -1,0 +1,136 @@
+@import "../../../stylings/variables";
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.content {
+  width: calc(100% - $mobile-spacing);
+  margin: auto;
+
+  .information {
+
+    h1 {
+      padding: 2rem 0 2rem 0;
+      text-align: center;
+      text-decoration: underline;
+    }
+
+    div {
+      align-items: center;
+      #logo {
+        width: 40%;
+        height: auto;
+        margin: 3rem auto;
+      }
+
+      .time-wrapper {
+        align-items: flex-start;
+        gap: .5rem;
+      }
+    }
+
+    .location {
+      align-items: flex-start;
+
+      h2 {
+        margin-bottom: .5rem;
+      }
+
+      .venue-wrapper {
+        display: flex;
+        flex-direction: row;
+        margin: 1rem 0;
+        a {
+
+          img {
+            width: 100%;
+            height: auto;
+          }
+
+          #venue {
+            aspect-ratio: 16 / 9;
+            border: 1px solid black;
+          }
+
+          #l_logo {
+            width: 95%;
+          }
+        }
+
+        #l_logo_link {
+          text-align: center;
+          margin-left: 5%;
+        }
+      }
+    }
+  }
+
+  .reasons {
+    margin-top: 3rem;
+    gap: 10px;
+
+    h2:first-child {
+      text-decoration: underline;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      padding-bottom: 1rem;
+    }
+
+    img {
+      align-self: center;
+      width: 80%;
+      height: auto;
+      margin: 3rem 0;
+    }
+
+    &:last-child {
+      margin-bottom: 3rem;
+    }
+  }
+}
+
+
+// Desktop settings
+@media only screen and (min-width: $desktop-min) {
+  .page {
+    max-width: calc(100% - $desktop-spacing);
+  }
+
+  .content {
+    max-width: calc(100% - $desktop-spacing);
+
+    .information {
+      h1 {
+        padding: 0!important;
+        margin: 5rem 0!important;
+      }
+    }
+  }
+
+  #logo {
+    padding: 0!important;
+    margin: 0 0 0 auto !important;
+  }
+
+  .teaser {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    img {
+      margin: auto;
+      max-height: 100vh;
+      width: auto;
+      box-shadow: 0 10px 40px rgba(157, 128, 128, 1);
+    }
+  }
+}

@@ -1,0 +1,17 @@
+<div class="content-wrapper">
+  <h2>Bilder</h2>
+  <form class="user-form">
+    <input id="file" type="file">
+    <button (click)="uploadFile()">Bild hochladen</button>
+    <div class="upload-status">
+      <label [innerHTML]="progressString"></label>
+      <mat-progress-bar mode="determinate" [value]="progressValue"></mat-progress-bar>
+    </div>
+  </form>
+  <div class="gallery-wrapper">
+    <div *ngFor="let image of images">
+      <video *ngIf="!isVideo('../../../assets/gallery/{{image.name}}')" controls="true" src="../../../assets/gallery/{{image.name}}"></video>
+      <img *ngIf="!isVideo('../../../assets/gallery/{{image.name}}')" src="../../../assets/gallery/{{image.name}}" />
+    </div>
+  </div>
+</div>

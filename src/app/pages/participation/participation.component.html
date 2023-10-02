@@ -1,0 +1,23 @@
+<div class="form-wrapper">
+  <h1>Teilnahmeformular</h1>
+  <form class="user-form">
+    <div class="user-input-wrapper">
+      <input type="text" id="name" placeholder="Name" required />
+      <div class="number-wrapper">
+        <label id="number-lbl">Personenanzahl:</label>
+        <input type="number" id="number" placeholder="Anzahl" required />
+      </div>
+      <div class="status-wrapper">
+        <label id="status-lbl">Teilnahme bestätigen<span>(Haken = Ich nehme Teil)</span></label>
+        <input type="checkbox" id="status" checked />
+      </div>
+    </div>
+    <div class="submit-wrapper">
+      <button id="submit" (click)="submitForm()">Antwort senden!</button>
+    </div>
+  </form>
+</div>
+<div class="secret-bubble">
+  <img (click)="openAdminPanel()" id="puppet" src="../../../assets/talking_puppet.gif" />
+  <img id="bubble" src="../../../assets/bubble.png" />
+</div>

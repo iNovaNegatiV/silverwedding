@@ -1,0 +1,13 @@
+.teaser {
+    position: relative;
+    text-align: center;
+  
+    img {
+      margin: auto;
+      max-height: 100vh;
+      max-width: 100%;
+      width: auto;
+      height: auto;
+      box-shadow: 0 0 40px rgba(157, 128, 128, .7);
+    }
+}

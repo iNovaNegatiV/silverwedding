@@ -1,0 +1,41 @@
+
+<div *ngIf="!loggedIn" class="panel-wrapper">
+  <h1>Administrativer Bereich</h1>
+  <div class="login">
+    <p>Passwort:</p>
+    <input id="user-input" type="password" />
+  </div>
+  <button id="btn-login" (click)="checkPassword()">Login</button>
+  <div class="content"></div>
+</div>
+
+<div class="login-content" *ngIf="loggedIn">
+  <div class="participants-wrapper">
+    <h2>Teilnehmer</h2>
+    <table class="participants">
+      <tr class="border-bottom">
+        <th>ID</th>
+        <th>Username</th>
+        <th style="text-align: center;">Anzahl</th>
+        <th>Timestamp</th>
+      </tr>
+      <tr class="participant-entry" *ngFor="let entry of guestEntrys" id="status_{{entry.getStatus()}}">
+        <td>{{entry.getN()}}</td>
+        <td>{{entry.getUsername()}}</td>
+        <td>{{entry.getGuestAmount()}}</td>
+        <td>{{entry.getTimestamp()}}</td>
+      </tr>
+    </table>
+  </div>
+  <div class="guestbook-wrapper">
+    <h2>Gästebuch</h2>
+    <div class="guestbook-entry" *ngFor="let entry of guestbookEntrys">
+      <p id="username">{{entry.getUsername()}}</p>
+      <p id="bodytext">{{entry.getBodytext()}}</p>
+      <div class="guestbook-media" *ngIf="entry.getImage() == 1">
+        <video id="video" *ngIf="isVideo(entry.getLink())" controls="true" src="{{entry.getLink()}}"></video>
+        <img id="image" *ngIf="!isVideo(entry.getLink())" src="{{entry.getLink()}}" />
+      </div>  
+    </div>
+  </div>
+</div>

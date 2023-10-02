@@ -1,0 +1,115 @@
+@import '../../../stylings/variables';
+
+.form-wrapper {
+  position: relative;
+  margin: 4rem auto;
+  width: 90%;
+
+  h1 {
+    margin: 1rem 0;
+    text-decoration: underline;
+  }
+
+  .user-form {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    margin-top: 2rem;
+
+    .submit-wrapper {
+      display: flex;
+      flex-direction: row;
+
+      #submit {
+        width: 50%;
+        justify-self: center;
+        align-self: flex-start;
+        border: 1px solid black;
+        background-color: $prim-color;
+        font-size: 1.3em;
+        padding: .5rem;
+        border-radius: 14px;
+        color: white;
+      }
+    }
+
+    .user-input-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+
+      #name {
+        width: 50%;
+        height: 2rem;
+        outline: none;
+        border: none;
+        border-bottom: 1px solid black;
+        background: transparent;
+      }
+
+      .number-wrapper {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+
+        #number-lbl {
+          font-size: 1.3em;
+        }
+
+        #number {
+          width: 3rem;
+          border: none;
+          border-bottom: 1px solid black;
+          outline: none;
+          background: transparent;
+
+          &:active, &:focus, &:focus-visible {
+            border: none;
+            border-bottom: 1px solid black;
+          }
+        }
+      }
+
+      .status-wrapper {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+
+        #status-lbl {
+          font-size: 1.3em;
+          align-self: center;
+
+          span {
+            font-size: .5em;
+          }
+        }
+
+        #status {
+          width: 1.5rem;
+          height: 1.5rem;
+        }
+      }
+    }
+  }
+}
+
+.secret-bubble {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  margin-top: 8rem;
+
+  #puppet {
+    width: 10rem;
+    height: auto;
+  }
+
+  #bubble {
+    position: absolute;
+    width: 12rem;
+    height: auto;
+    top: -5rem;
+    left: 8rem;
+  }
+}

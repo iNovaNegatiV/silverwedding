@@ -1,0 +1,51 @@
+@import "stylings/variables";
+
+html, body {
+  background: rgb(213,200,200);
+  background: linear-gradient(180deg, rgba(213,200,200,1) 0%, rgba(234,228,228,1) 26%, rgba(255,255,255,1) 72%);}
+
+@media only screen and (min-width: $desktop-min) {
+  html, body {
+    background: rgb(157,128,128);
+    background: linear-gradient(180deg, rgba(157,128,128,1) 0%, rgba(213,200,200,1) 20%, rgba(234,228,228,1) 45%, rgba(255,255,255,1) 70%);
+
+  }
+}
+
+html, body, h1, h2, h3, p, ul, ol, li {
+  margin: 0;
+  padding: 0;
+  font-family: "Fira Sans", serif;
+}
+
+// Font sizes
+div, p, ul, ol, li {
+  font-size: .9rem;
+}
+
+// Headline Styling
+
+h1, h2, h3 {
+  font-family: "Fira Sans", serif;
+  font-weight: normal;
+  color: $prim-color;
+  text-shadow: -1px -1px 0px #FFFFFF, 1px 1px 0px #FFFFFF;
+}
+
+h1 {
+  font-size: 1.9em;
+}
+
+h2 {
+  font-size: 1.4em;
+}
+
+h3 {
+  font-size: 1.1em;
+}
+
+@media only screen and (min-width: $desktop-min)  {
+  h1 {
+    font-size: 3em;
+  }
+}

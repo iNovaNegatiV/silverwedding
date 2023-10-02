@@ -1,0 +1,33 @@
+<nav class="navigation">
+  <div class="closing-screen">
+    <img (click)="toggleNavigation(false)" class="nav-icon" src="../../../assets/burger_menu.png" alt="" title="" />
+    <h1 class="current-page-headline"></h1>
+  </div>
+  <ul class="nav-content">
+      <img (click)="toggleNavigation(false)" class="nav-icon" src="../../../assets/close.png" />
+      <li>
+        <a class="rt-link" (click)="toggleNavigation(true)" routerLink="/">Startseite</a>
+        <img src="../../../assets/socks.png" />
+      </li>
+      <li>
+        <a class="rt-link" (click)="toggleNavigation(true)" routerLink="/speisen">Speisen</a>
+        <img src="../../../assets/socks.png" />
+      </li>
+      <li>
+        <a class="rt-link" (click)="toggleNavigation(true)" routerLink="/getraenke">Getränke</a>
+        <img src="../../../assets/socks.png" />
+      </li>
+      <li>
+        <a class="rt-link" (click)="toggleNavigation(true)" routerLink="/participation">Teilnahme</a>
+        <img src="../../../assets/socks.png" />
+      </li>
+      <li>
+        <a class="rt-link" (click)="toggleNavigation(true)" routerLink="/guestbook">Gästebuch</a>
+        <img src="../../../assets/socks.png" />
+      </li>
+      <li>
+        <a class="rt-link" (click)="toggleNavigation(true)" routerLink="/gallery">Bildergallerie</a>
+        <img src="../../../assets/socks.png" />
+      </li>
+  </ul>
+</nav>

@@ -1,0 +1,16 @@
+.menu-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 10rem;
+
+  h2 {
+    margin-top: 2rem;
+    text-decoration: underline;
+  }
+
+  a {
+    margin-top: 10px;
+  }
+}

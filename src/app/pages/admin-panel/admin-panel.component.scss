@@ -1,0 +1,87 @@
+@import "../../../stylings/variables";
+
+.panel-wrapper {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  h1 {
+    text-decoration: underline;
+  }
+
+  #btn-login {
+    width: 100%;
+    color: white;
+    height: 2rem;
+    border-radius: 10px;
+    font-size: 1.3em;
+    background-color: $prim-dark-color;
+    border: 2px solid black;
+  }
+
+  .login {
+    display: flex;
+    flex-direction: row;
+    gap: .5rem;
+
+    p {}
+
+    input {
+      outline: none;
+      border: none;
+      border-bottom: 1px solid black;
+      width: 100%;
+    }
+  }
+}
+
+.login-content {
+  width: calc(100% - 2rem);
+  padding: 1rem;
+
+  .participants-wrapper {
+    margin: 2rem 0;
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+
+      .participant-entry#status_0 {
+        background-color: red;
+      }
+
+      .participant-entry#status_1 {
+        background-color: green;
+      }
+
+      tr {
+        border-bottom: 2px solid black;
+        line-height: 2rem;
+        th {
+          text-align: left;
+          border-bottom: 1px solid black;
+
+          &:first-child {
+            width: 20px;
+            text-align: center;
+          }
+        }
+
+        td {
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  .guestbook-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    .guestbook-entry {
+      outline: 1px solid black;
+    }
+  }
+}

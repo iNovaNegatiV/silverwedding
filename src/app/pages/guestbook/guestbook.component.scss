@@ -1,0 +1,64 @@
+@import '../../../stylings/variables';
+
+.user-form {
+  margin:  1.5rem auto;
+  width: calc(100% - 5rem);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  .user-input-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+
+    input {
+      border: none;
+      outline: none;
+      border-bottom: 1px solid black;
+
+      &:last-child {
+        border: none;
+      }
+    }
+
+    textarea {
+      padding: .5rem;
+      height: 8rem;
+    }
+  }
+
+  #submit {
+    width: 10rem;
+    height: 2rem;
+    border-radius: 10px;
+    border: 2px solid black;
+    background-color: $prim-dark-color;
+    color: white;
+    font-size: 1em;
+  }
+
+  .status-wrapper {
+    display: none;
+    width: 100%;
+    height: 2rem;
+    opacity: 0;
+    transition: opacity 1.5s ease;
+
+    .mat-mdc-progress-bar {
+      --mdc-linear-progress-active-indicator-color: $prim-dark-color !important;
+    }
+  }
+
+  .show-status {
+    display: block !important;
+    opacity: 100%;
+  }
+
+  .legal-text {
+    p {
+      font-size: .9em;
+    }
+  }
+}
