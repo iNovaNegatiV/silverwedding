@@ -1,10 +1,7 @@
-import {Component, Inject, OnInit} from '@angular/core';
-import {HttpClient} from "@angular/common/http";
-import {DOCUMENT} from "@angular/common";
+import { Component } from '@angular/core';
 import { GuestbookEntry } from 'src/app/modules/GuestbookEntry';
 import { GuestEntry } from 'src/app/modules/GuestEntry';
 import { ApiService } from 'src/app/modules/ApiService';
-import { firstValueFrom } from 'rxjs';
 
 @Component({
   selector: 'app-admin-panel',

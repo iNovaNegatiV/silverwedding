@@ -8,10 +8,11 @@
       <mat-progress-bar mode="determinate" [value]="progressValue"></mat-progress-bar>
     </div>
   </form>
+  <h2 class="gallery-headline">Bildergallerie</h2>
   <div class="gallery-wrapper">
-    <div *ngFor="let image of images">
-      <video *ngIf="!isVideo('../../../assets/gallery/{{image.name}}')" controls="true" src="../../../assets/gallery/{{image.name}}"></video>
-      <img *ngIf="!isVideo('../../../assets/gallery/{{image.name}}')" src="../../../assets/gallery/{{image.name}}" />
+    <div class="media" *ngFor="let image of images">
+      <video id="video" *ngIf="isVideo('../../../assets/gallery/' + image.name)" controls="true" src="../../../assets/gallery/{{image.name}}"></video>
+      <img id="image" *ngIf="!isVideo('../../../assets/gallery/' + image.name)" src="../../../assets/gallery/{{image.name}}" />
     </div>
   </div>
 </div>

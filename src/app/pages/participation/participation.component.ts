@@ -2,6 +2,7 @@ import {Component, Inject, OnInit} from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { DOCUMENT } from "@angular/common";
 import {Router} from "@angular/router";
+import { ApiService } from 'src/app/modules/ApiService';
 
 @Component({
   selector: 'app-participation',
@@ -17,6 +18,7 @@ export class ParticipationComponent implements OnInit {
   numberInput: HTMLInputElement = null;
 
   constructor(
+    private service: ApiService,
     private http: HttpClient,
     @Inject(DOCUMENT) private injectedDocument: any,
     private router: Router
@@ -27,12 +29,7 @@ export class ParticipationComponent implements OnInit {
     this.statusInput = (<HTMLInputElement> document.getElementById('status'));
     this.numberInput = (<HTMLInputElement> document.getElementById('number'));
     this.domain = this.injectedDocument.location.hostname;
-
-    if(this.domain == "localhost") {
-      this.api = "http://localhost:82/php/connection.php";
-    } else {
-      this.api = "https://silberfeier-behrens.site/php/connection.php";
-    }
+    this.api = this.service.getApiUrl();
   }
 
   submitForm() {

@@ -36,18 +36,30 @@
     }
   }
 
+  .gallery-headline {
+    margin: 4rem 0 1rem 0;
+  }
+
   .gallery-wrapper {
     margin: 2rem auto;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: .5rem;
+    gap: 2rem 10%;
     align-items: center;
-    div {
-      width: calc(50% - 4px);
-      img {
+    .media {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      aspect-ratio: 1 / 1;
+      width: calc(45% - 8px);
+      height: auto;
+      outline: 0.75rem solid white;
+      border: 4px solid #ab575f;
+      background-color: black;
+      #image, #video{
         max-width: 100%;
-        height: auto;
+        max-height: 100%;
       }
     }
   }

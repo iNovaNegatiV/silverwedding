@@ -1,7 +1,5 @@
-import {HttpClient, HttpEventType} from '@angular/common/http';
-import {Component, Inject, OnInit} from '@angular/core';
-import {DOCUMENT} from "@angular/common";
-import {Router} from "@angular/router";
+import {HttpEventType} from '@angular/common/http';
+import {Component, OnInit} from '@angular/core';
 import { ApiService } from 'src/app/modules/ApiService';
 
 @Component({
@@ -10,9 +8,6 @@ import { ApiService } from 'src/app/modules/ApiService';
   styleUrls: ['./gallery.component.scss']
 })
 export class GalleryComponent implements OnInit {
-
-  api: string;
-  domain: string;
   progressValue: number = 0;
   progressString: string = this.progressValue + "%";
   error_msg: string = "Unknown error!";
@@ -30,8 +25,7 @@ export class GalleryComponent implements OnInit {
   isVideo(link: string): boolean {
     let extension_splitter = link.split(".");
     let extension = extension_splitter[extension_splitter.length - 1];
-    let videoExtensions = ["mp4", "mov", "wmv", "avi"];
-
+    let videoExtensions = ["mp4", "mov", "wmv", "avi", "gif", "mkv"];
     if(videoExtensions.includes(extension)) {
       return true;
     }
@@ -65,9 +59,10 @@ export class GalleryComponent implements OnInit {
       return false;
     }
 
-    let allowedFiletypes = ["jpg", "png", "jpeg", "gif", "tiff", "webp", "mp4", "mov", "webm", "wmv", "avi"];
-    let myFile = fileElement.files[0];
-    let fileType = myFile.type.replace(/(.*)\//g, '');
+    let allowedFiletypes = ["jpg", "png", "jpeg", "gif", "tiff", "webp", "mp4", "mov", "webm", "wmv", "avi", "mkv"];
+    let myFile = fileElement.files[0].name;
+    let fileSplitter = myFile.split('.');
+    let fileType = fileSplitter[fileSplitter.length - 1];
     if(!allowedFiletypes.includes(fileType)) {
       this.error_msg = "Bitte geben Sie nur Dateien der folgenden Typen an: ";
       allowedFiletypes.forEach(t => {

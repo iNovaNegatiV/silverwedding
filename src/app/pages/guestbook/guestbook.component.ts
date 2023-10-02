@@ -3,6 +3,7 @@ import {HttpClient, HttpEventType} from "@angular/common/http";
 import {DOCUMENT} from "@angular/common";
 import {Router} from "@angular/router";
 import * as crypto from 'crypto-js';
+import { ApiService } from 'src/app/modules/ApiService';
 
 @Component({
   selector: 'app-guestbook',
@@ -12,24 +13,19 @@ import * as crypto from 'crypto-js';
 export class GuestbookComponent implements OnInit {
 
   api: string;
-  domain: string;
   progressValue: number = 0;
   progressString: string = this.progressValue + "%";
   error_msg: string = "Unknown error!";
 
   constructor(
+    private service: ApiService,
     private http: HttpClient,
     @Inject(DOCUMENT) private injectedDocument: any,
     private router: Router
   ) {}
 
   ngOnInit(): void {
-    this.domain = this.injectedDocument.location.hostname;
-    if(this.domain == "localhost") {
-      this.api = "http://localhost:82/php/connection.php";
-    } else {
-      this.api = "https://silberfeier-behrens.site/php/connection.php";
-    }
+    this.api = this.service.getApiUrl();
   }
 
   hashString(s: string): string {

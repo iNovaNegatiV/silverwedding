@@ -1,1 +1,2 @@
-xcopy C:\Users\justus.krebsfaenger\OtherProjects\silverwedding\src\php\ C:\Users\justus.krebsfaenger\OtherProjects\silverwedding\dist\silverwedding\php\ /E
+xcopy .\src\php\ .\dist\silverwedding\php\ /E /Y
+xcopy .\src\assets\ .\dist\silverwedding\assets\ /E /Y

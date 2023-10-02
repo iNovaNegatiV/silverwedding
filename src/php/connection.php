@@ -5,10 +5,13 @@ class Connector {
   // Connector Konstruktor
   function __construct(
     private string $servername = "localhost",
-    private string $username = "id21082841_root",
-    private string $password = "Finita17310!",
     private string $adminPassToken = "SockenFeier#2023?!",
-    private string $database = "id21082841_silberfeier"
+    // private string $username = "id21082841_root",
+    // private string $password = "Finita17310!",
+    // private string $database = "id21082841_silberfeier"
+    private string $username = "u334874850_root",
+    private string $password = "Xg8QP?23Meme!",
+    private string $database = "u334874850_silverwedding"
   ) {}
 
   // Returns new Mysqli connection
@@ -246,7 +249,7 @@ class Connector {
         $images[] = $image;
       }
     }
-    
+
     return json_encode([
       'images' => $images,
       'status' => 'ok'
